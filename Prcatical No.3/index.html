@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS Demonstration</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Styles defined here apply only to this page */
+        /* They can override external styles if more specific */
+        
+        /* Styling link states (pseudo-classes) */
+        a {
+            color: var(--accent-color);
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-card">
+        <h1 id="main-title">Practical No.3</h1>
+        
+        <div class="highlight-box">
+            <p>This page demonstrates the three types of CSS and various selectors to create a professional and amazing design.</p>
+        </div>
+
+        <h2>CSS Types & Selectors</h2>
+        <p>
+            The main design of this page (fonts, colors, layout) is controlled by an <strong>External Stylesheet</strong> (<code>style.css</code>). This is the best practice for styling a full website.
+        </p>
+        <p>
+            The styles for the links (like this <a href="#">example link</a>) are defined in an <strong>Internal Stylesheet</strong>, located in the <code>&lt;head&gt;</code> section of this HTML file.
+        </p>
+        <p>
+            And finally, this sentence includes a part styled with an 
+            <strong style="color: #c62828; border-bottom: 2px dotted #c62828; padding-bottom: 2px;">
+                Inline Style
+            </strong>, which is applied directly to a single element.
+        </p>
+
+        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
+
+        <h2>Cursor Showcase</h2>
+        <p>Hover over the boxes below to see different cursor types in action. These are styled using <strong>class selectors</strong> in the external stylesheet.</p>
+
+        <div class="cursor-grid">
+            <div class="cursor-box cursor-wait"><p>Wait</p></div>
+            <div class="cursor-box cursor-progress"><p>Progress</p></div>
+            <div class="cursor-box cursor-pointer"><p>Pointer</p></div>
+            <div class="cursor-box cursor-help"><p>Help</p></div>
+            <div class="cursor-box cursor-not-allowed"><p>Not Allowed</p></div>
+            <div class="cursor-box cursor-zoom-in"><p>Zoom In</p></div>
+            <div class="cursor-box cursor-custom"><p>Custom Image</p></div>
+        </div>
+    </div>
+
+</body>
+</html>

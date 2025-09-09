@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATALOG>
+  <CD>
+    <TITLE>Hits of Arijit Singh</TITLE>
+    <ARTIST>Arijit Singh</ARTIST>
+    <COUNTRY>India</COUNTRY>
+    <COMPANY>T-Series</COMPANY>
+    <PRICE>150</PRICE>
+    <YEAR>2018</YEAR>
+  </CD>
+  <CD>
+    <TITLE>Best of Lata Mangeshkar</TITLE>
+    <ARTIST>Lata Mangeshkar</ARTIST>
+    <COUNTRY>India</COUNTRY>
+    <COMPANY>Saregama</COMPANY>
+    <PRICE>200</PRICE>
+    <YEAR>1995</YEAR>
+  </CD>
+  <CD>
+    <TITLE>A.R. Rahman Classics</TITLE>
+    <ARTIST>A.R. Rahman</ARTIST>
+    <COUNTRY>India</COUNTRY>
+    <COMPANY>Sony Music</COMPANY>
+    <PRICE>250</PRICE>
+    <YEAR>2005</YEAR>
+  </CD>
+  <CD>
+    <TITLE>Shreya Ghoshal Melodies</TITLE>
+    <ARTIST>Shreya Ghoshal</ARTIST>
+    <COUNTRY>India</COUNTRY>
+    <COMPANY>T-Series</COMPANY>
+    <PRICE>180</PRICE>
+    <YEAR>2012</YEAR>
+  </CD>
+</CATALOG>
