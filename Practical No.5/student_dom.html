@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Information - DOM Example</title>
+</head>
+<body>
+    <h1>Student Information (DOM)</h1>
+    <p>
+        Click the button to load and display the <b>second student's</b> details 
+        (uses fetch + DOMParser).
+    </p>
+
+    <button onclick="getSecondStudent()">Get Second Student Info</button>
+
+    <h2>Second Student’s Data:</h2>
+    <div id="student-info" style="border:1px solid #ccc; padding:8px; width:60%;"></div>
+
+    <script>
+        function loadXML() {
+            return fetch('student.xml')   // this file will hold your student data
+                .then(response => {
+                    if (!response.ok) throw new Error('HTTP error ' + response.status);
+                    return response.text();
+                })
+                .then(str => {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(str, "application/xml");
+
+                    // Check if parsing failed
+                    const err = xmlDoc.getElementsByTagName("parsererror");
+                    if (err.length) throw new Error('XML parse error: ' + err[0].textContent);
+
+                    return xmlDoc;
+                });
+        }
+
+        function getSecondStudent() {
+            loadXML().then(xmlDoc => {
+                const students = xmlDoc.getElementsByTagName("student");
+
+                if (students.length >= 2) {
+                    const s = students[1]; // second student (index 1)
+                    const rollno = s.getElementsByTagName("rollno")[0].textContent;
+                    const name = s.getElementsByTagName("name")[0].textContent;
+                    const age = s.getElementsByTagName("age")[0].textContent;
+                    const department = s.getElementsByTagName("department")[0].textContent;
+
+                    document.getElementById("student-info").innerHTML = `
+                        <p><b>Roll No:</b> ${rollno}</p>
+                        <p><b>Name:</b> ${name}</p>
+                        <p><b>Age:</b> ${age}</p>
+                        <p><b>Department:</b> ${department}</p>
+                    `;
+                } else {
+                    alert('Less than 2 students present.');
+                }
+            }).catch(err => {
+                console.error(err);
+                alert('Error: ' + err.message + '\n(If you are running locally, start a local HTTP server and open via http://localhost:PORT/ )');
+            });
+        }
+    </script>
+</body>
+</html>

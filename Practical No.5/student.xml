@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student>
+        <rollno>101</rollno>
+        <name>Jane Smith</name>
+        <age>20</age>
+        <department>Computer Science</department>
+    </student>
+    <student>
+        <rollno>102</rollno>
+        <name>Abhishek Kothe</name>
+        <age>19</age>
+        <department>Computer Technology</department>
+    </student>
+    <student>
+        <rollno>103</rollno>
+        <name>Mike Brown</name>
+        <age>22</age>
+        <department>Mechanical</department>
+    </student>
+</students>
