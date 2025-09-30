@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 { margin: 0 0 20px; color: #333; }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover { opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form id="form">
+            <label>Name *</label>
+            <input type="text" name="name" required placeholder="Full Name">
+            
+            <label>Email *</label>
+            <input type="email" name="email" required placeholder="you@example.com">
+            
+            <label>Password *</label>
+            <input type="password" name="password" required minlength="8">
+            
+            <label>Date of Birth *</label>
+            <input type="date" name="dob" required>
+            
+            <label>Country *</label>
+            <select name="country" required>
+                <option value="">Select</option>
+                <option value="us">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="in">India</option>
+            </select>
+            
+            <label>Gender *</label>
+            <input type="radio" name="gender" value="male" required> Male
+            <input type="radio" name="gender" value="female" required> Female
+            
+            <label>Bio</label>
+            <textarea name="bio" rows="3" placeholder="About you..."></textarea>
+            
+            <label>
+                <input type="checkbox" name="terms" required> I agree to Terms *
+            </label>
+            
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('form').onsubmit = e => {
+            e.preventDefault();
+            console.log(Object.fromEntries(new FormData(e.target)));
+            alert('Registration successful!');
+        };
+    </script>
+</body>
+</html>
